@@ -5,7 +5,8 @@ router.get("/usertest",(req,res)=>{
 });
 
 router.post("/userposttest",(req,res)=>{
-    const username =  req.body.username;
+    const {username} =  req.body;
+    res.send("your username is: " + username);
 });
 
 module.exports = router;
