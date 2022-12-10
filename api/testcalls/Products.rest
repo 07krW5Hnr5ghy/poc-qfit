@@ -1,0 +1,15 @@
+### Add Product
+
+POST http://localhost:5000/api/products
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+
+{
+    "title":"puma tshirt",
+    "desc":"test",
+    "img":"test",
+    "categories":["tshirt","man"],
+    "size":"M",
+    "color":"gray",
+    "price":30
+}

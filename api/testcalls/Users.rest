@@ -1,3 +1,4 @@
+### register test user
 POST http://localhost:5000/api/auth/register
 content-type: application/json
 
@@ -7,12 +8,66 @@ content-type: application/json
     "password":"123456"
 }
 
-###
+### login test user
 
 POST http://localhost:5000/api/auth/login
-content-type: application/json
+Content-Type: application/json 
 
 {
     "username":"demo",
     "password":"123456"
 }
+
+### update test user
+
+PUT http://localhost:5000/api/users/639123cc9fc90f6a40ecaee5
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTEyM2NjOWZjOTBmNmE0MGVjYWVlNSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NzA2MDU0NTcsImV4cCI6MTY3MDg2NDY1N30.Vl-GGSqI0Xxzk0hmm2l7ocRH2Vo1EzL_rLe6EHDZuLw
+
+{
+    "username":"demoUpt"
+}
+
+### register admin user
+POST http://localhost:5000/api/auth/register
+content-type: application/json
+
+{
+    "username":"admin",
+    "email":"admin@gmail.com",
+    "password":"123456"
+}
+
+### login admin user
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json 
+
+{
+    "username":"admin",
+    "password":"123456"
+}
+
+### get test user
+
+GET http://localhost:5000/api/users/find/639123cc9fc90f6a40ecaee5
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+
+{
+    "username":"demoUpt"
+}
+
+### get test user
+
+GET http://localhost:5000/api/users?new=true
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+
+{}
+
+### get users stats
+GET http://localhost:5000/api/users/stats
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+
+{}
