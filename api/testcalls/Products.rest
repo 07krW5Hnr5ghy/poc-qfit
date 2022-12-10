@@ -5,11 +5,19 @@ Content-Type: application/json
 token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
 
 {
-    "title":"puma tshirt",
-    "desc":"test",
+    "title":"nike tshirt",
+    "desc":"test2",
     "img":"test",
-    "categories":["tshirt","man"],
-    "size":"M",
+    "categories":["tshirt","woman"],
+    "size":"S",
     "color":"gray",
     "price":30
 }
+
+### Get Products
+
+GET http://localhost:5000/api/products?category=tshirt
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+
+{}
