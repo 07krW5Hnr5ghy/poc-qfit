@@ -1,0 +1,27 @@
+### Add Order
+POST http://localhost:5000/api/orders
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+
+{
+    "userId":"639123cc9fc90f6a40ecaee5",
+    "products":[
+        {
+            "productId":"21ewef",
+            "quantity":2
+        },
+        {
+            "productId":"21ewefasdasd",
+            "quantity":1
+        }
+    ],
+    "amount":100,
+    "address":"USA"
+}
+
+### Order stats
+GET http://localhost:5000/api/orders/income
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+
+{}
