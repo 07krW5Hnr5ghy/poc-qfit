@@ -3,17 +3,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
-const Container = styled.div`
-    flex:1;
-    margin:5px;
-    min-width:280px;
-    height:350px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background-color:#f5fbfd;
-    position:relative;
-`;
+
 
 const Circle = styled.div`
     width:200px;
@@ -27,6 +17,7 @@ const Image = styled.img`
     z-index:2;
 `;
 const Info = styled.div`
+    opacity:0;
     width:100%;
     height:100%;
     position:absolute;
@@ -37,6 +28,22 @@ const Info = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
+    transition:all 0.5s ease;
+    cursor:pointer;
+`;
+const Container = styled.div`
+    flex:1;
+    margin:5px;
+    min-width:280px;
+    height:350px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:#f5fbfd;
+    position:relative;
+    &:hover ${Info}{
+        opacity:1;
+    }
 `;
 const Icon = styled.div`
     width:40px;
