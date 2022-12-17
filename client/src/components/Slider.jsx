@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import {sliderItems} from '../data';
+import {mobile} from "../responsive";
 
 const Container = styled.div`
     width:100%;
@@ -11,6 +12,7 @@ const Container = styled.div`
     position:relative;
     overflow:hidden;
     background-color:#${props => props.bg};
+    ${mobile({display:"none"})}
 `;
 
 const Arrow = styled.div`
