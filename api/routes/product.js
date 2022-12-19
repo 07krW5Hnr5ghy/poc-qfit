@@ -53,7 +53,7 @@ router.get("/find/:id",verifyTokenAdmin, async (req,res) => {
 });
 
 // GET ALL PRODUCTS
-router.get("/",verifyTokenAdmin, async (req,res) => {
+router.get("/", async (req,res) => {
     const qNew = req.query.new;
     const qCategory = req.query.category;
     try{

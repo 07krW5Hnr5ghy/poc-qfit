@@ -1,23 +1,112 @@
-### Add Product
-
+### Add Product 1
 POST http://localhost:5000/api/products
 Content-Type: application/json
-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWU1NzM2ZWZmYjgxZTYzOWJhMzg3YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MTMyMTYxNiwiZXhwIjoxNjcxNTgwODE2fQ.3PU6MOmdqsMOw0CmGnygbeP2Tj0nD_iTU6SfOdTLSew
 
 {
-    "title":"nike tshirt",
-    "desc":"test2",
-    "img":"test",
-    "categories":["tshirt","woman"],
-    "size":"S",
-    "color":"gray",
-    "price":30
+    "title":"Herman Coat",
+    "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "img":"https://i.ibb.co/YZC6n90/coat1.png",
+    "categories":["coat","woman"],
+    "size":["S","M","L"],
+    "color":["gray","green"],
+    "price":89
+}
+
+### Add Product 2
+POST http://localhost:5000/api/products
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWU1NzM2ZWZmYjgxZTYzOWJhMzg3YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MTMyMTYxNiwiZXhwIjoxNjcxNTgwODE2fQ.3PU6MOmdqsMOw0CmGnygbeP2Tj0nD_iTU6SfOdTLSew
+
+{
+    "title":"Myson Rainbow Coat",
+    "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "img":"https://i.ibb.co/J39QRFz/coat3.png",
+    "categories":["coat","men"],
+    "size":["XS","L","XL"],
+    "color":["red","yellow","orange"],
+    "price":119
+}
+
+### Add Product 3
+POST http://localhost:5000/api/products
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWU1NzM2ZWZmYjgxZTYzOWJhMzg3YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MTMyMTYxNiwiZXhwIjoxNjcxNTgwODE2fQ.3PU6MOmdqsMOw0CmGnygbeP2Tj0nD_iTU6SfOdTLSew
+
+{
+    "title":"Blue Jean",
+    "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "img":"https://cdn.lorem.space/images/fashion/.cache/500x500/ian-dooley-TT-ROxWj9nA-unsplash.jpg",
+    "categories":["pants","women"],
+    "size":["XS","S","M"],
+    "color":["blue","gray","black"],
+    "price":149
+}
+
+### Add Product 4
+POST http://localhost:5000/api/products
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWU1NzM2ZWZmYjgxZTYzOWJhMzg3YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MTMyMTYxNiwiZXhwIjoxNjcxNTgwODE2fQ.3PU6MOmdqsMOw0CmGnygbeP2Tj0nD_iTU6SfOdTLSew
+
+{
+    "title":"Coat Wizor",
+    "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "img":"https://cdn.lorem.space/images/fashion/.cache/500x500/abbat--cqCezclrfs-unsplash.jpg",
+    "categories":["coat","women"],
+    "size":["XS","S","L"],
+    "color":["white"],
+    "price":95
+}
+
+### Add Product 5
+POST http://localhost:5000/api/products
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWU1NzM2ZWZmYjgxZTYzOWJhMzg3YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MTMyMTYxNiwiZXhwIjoxNjcxNTgwODE2fQ.3PU6MOmdqsMOw0CmGnygbeP2Tj0nD_iTU6SfOdTLSew
+
+{
+    "title":"Sport Shoes",
+    "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "img":"https://cdn.lorem.space/images/shoes/.cache/500x500/wengang-zhai-_fOL6ebfECQ-unsplash.jpg",
+    "categories":["shoes","men"],
+    "size":["12","36"],
+    "color":["white","black","red"],
+    "price":50
+}
+
+### Add Product 6
+POST http://localhost:5000/api/products
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWU1NzM2ZWZmYjgxZTYzOWJhMzg3YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MTMyMTYxNiwiZXhwIjoxNjcxNTgwODE2fQ.3PU6MOmdqsMOw0CmGnygbeP2Tj0nD_iTU6SfOdTLSew
+
+{
+    "title":"Nike 5 Mercurial",
+    "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "img":"https://cdn.lorem.space/images/shoes/.cache/500x500/wengang-zhai-_fOL6ebfECQ-unsplash.jpg",
+    "categories":["shoes","men"],
+    "size":["12","24","48"],
+    "color":["white","orange","green"],
+    "price":83
+}
+
+### Add Product 7
+POST http://localhost:5000/api/products
+Content-Type: application/json
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWU1NzM2ZWZmYjgxZTYzOWJhMzg3YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MTMyMTYxNiwiZXhwIjoxNjcxNTgwODE2fQ.3PU6MOmdqsMOw0CmGnygbeP2Tj0nD_iTU6SfOdTLSew
+
+{
+    "title":"Tennis pro M",
+    "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "img":"https://cdn.lorem.space/images/shoes/.cache/500x500/luis-felipe-lins-J2-wAQDckus-unsplash.jpg",
+    "categories":["shoes","woman"],
+    "size":["12","48","8"],
+    "color":["black","blue","red"],
+    "price":76
 }
 
 ### Get Products
 
 GET http://localhost:5000/api/products?category=tshirt
 Content-Type: application/json
-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTEyM2NjOWZjOTBmNmE0MGVjYWVlNSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NzEzMDQ1NzAsImV4cCI6MTY3MTU2Mzc3MH0.1wtiIYLd2qD8ln4Rgrdj8SsLnaBZHqXXHEGGK1lo2HA
 
 {}
