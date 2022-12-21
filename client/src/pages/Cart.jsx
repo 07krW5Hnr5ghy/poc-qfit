@@ -6,7 +6,12 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import {mobile} from "../responsive";
 import {useSelector} from "react-redux";
+import StripeCheckout from "react-stripe-checkout";
+import {useEffect, useState} from "react";
+import { userRequest } from '../requestMethods';
+import {useLocation, useNavigate} from "react-router-dom";
 
+const KEY = process.env.REACT_APP_STRIPE;
 const Container = styled.div``;
 const Wrapper = styled.div`
     padding:20px;
@@ -134,7 +139,7 @@ const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
-const SummaryButton = styled.button`
+const Button = styled.button`
     width:100%;
     padding:10px;
     background-color:black;
@@ -145,72 +150,105 @@ const SummaryButton = styled.button`
 
 const Cart = () => {
     const cart = useSelector(state=>state.cart);
-  return (
-    <Container>
-        <Navbar/>
-        <Announcement/>
-        <Wrapper>
-            <Title>YOUR BAG</Title>
-            <Top>
-                <TopButton>CONTINUE SHOPPING</TopButton>
-                <TopTexts>
-                    <TopText>Shopping Bag(2)</TopText>
-                    <TopText>Your Wishlist(0)</TopText>
-                </TopTexts>
-                <TopButton type="filled">CHECKOUT NOW</TopButton>
-            </Top>
-            <Bottom>
-                <Info>
-                    {cart.products.map((product) => (
-                        <Product>
-                            <ProductDetail>
-                                <Image src={product.img}/>
-                                <Details>
-                                    <ProductName><b>Product:</b> {product.title}</ProductName>
-                                    <ProductId><b>ID:</b> {product._id}</ProductId>
-                                    <ProductColor color={product.color} />
-                                    <ProductSize><b>Size:</b> {product.size}</ProductSize>
-                                </Details>
-                            </ProductDetail>
-                            <PriceDetail>
-                                <ProductAmountContainer>
-                                    <AddIcon/>
-                                    <ProductAmount>{product.quantity}</ProductAmount>
-                                    <RemoveIcon/>
-                                </ProductAmountContainer>
-                                <ProductPrice>
-                                    $ {product.price * product.quantity}
-                                </ProductPrice>
-                            </PriceDetail>
-                        </Product>))
-                    }                   
-                <Hr/>
-                </Info>
-                <Summary>
-                    <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-                    <SummaryItem>
-                        <SummaryItemText>Subtotal</SummaryItemText>
-                        <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
-                    </SummaryItem>
-                    <SummaryItem>
-                        <SummaryItemText>Estimated Shipping</SummaryItemText>
-                        <SummaryItemPrice>$ 5.90</SummaryItemPrice>
-                    </SummaryItem>
-                    <SummaryItem>
-                        <SummaryItemText>Shipping Discount</SummaryItemText>
-                        <SummaryItemPrice>$ -5.90</SummaryItemPrice>
-                    </SummaryItem>
-                    <SummaryItem type="total">
-                        <SummaryItemText>Total</SummaryItemText>
-                        <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
-                    </SummaryItem>
-                    <SummaryButton>CHECK NOW</SummaryButton>
-                </Summary>
-            </Bottom>
-        </Wrapper>
-        <Footer/>
-    </Container>
-  )
+    const [stripeToken,setStripeToken] = useState(null);
+    const location = useLocation();
+    const history = useNavigate();
+    const onToken = (token) => {
+        setStripeToken(token);
+    }
+    useEffect(() => {
+        const makeRequest = async () => {
+            try{
+                const res = await userRequest.post("/checkout/payment",{
+                    tokenId:stripeToken.id,
+                    amount:500,
+                });
+                console.log(res);
+                history({
+                    pathname:'/success',
+                    state:{...location.state, data:res.data}
+                });
+            }catch(err){}
+        };
+        stripeToken && makeRequest();
+    },[stripeToken,cart.total,history]);
+    console.log(stripeToken);
+    return (
+        <Container>
+            <Navbar/>
+            <Announcement/>
+            <Wrapper>
+                <Title>YOUR BAG</Title>
+                <Top>
+                    <TopButton>CONTINUE SHOPPING</TopButton>
+                    <TopTexts>
+                        <TopText>Shopping Bag(2)</TopText>
+                        <TopText>Your Wishlist(0)</TopText>
+                    </TopTexts>
+                    <TopButton type="filled">CHECKOUT NOW</TopButton>
+                </Top>
+                <Bottom>
+                    <Info>
+                        {cart.products.map((product) => (
+                            <Product>
+                                <ProductDetail>
+                                    <Image src={product.img}/>
+                                    <Details>
+                                        <ProductName><b>Product:</b> {product.title}</ProductName>
+                                        <ProductId><b>ID:</b> {product._id}</ProductId>
+                                        <ProductColor color={product.color} />
+                                        <ProductSize><b>Size:</b> {product.size}</ProductSize>
+                                    </Details>
+                                </ProductDetail>
+                                <PriceDetail>
+                                    <ProductAmountContainer>
+                                        <AddIcon/>
+                                        <ProductAmount>{product.quantity}</ProductAmount>
+                                        <RemoveIcon/>
+                                    </ProductAmountContainer>
+                                    <ProductPrice>
+                                        $ {product.price * product.quantity}
+                                    </ProductPrice>
+                                </PriceDetail>
+                            </Product>))
+                        }                   
+                    <Hr/>
+                    </Info>
+                    <Summary>
+                        <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+                        <SummaryItem>
+                            <SummaryItemText>Subtotal</SummaryItemText>
+                            <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText>Estimated Shipping</SummaryItemText>
+                            <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem>
+                            <SummaryItemText>Shipping Discount</SummaryItemText>
+                            <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+                        </SummaryItem>
+                        <SummaryItem type="total">
+                            <SummaryItemText>Total</SummaryItemText>
+                            <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+                        </SummaryItem>
+                        <StripeCheckout
+                        name="jprp"
+                        billingAddress
+                        shippingAddress
+                        description={`Your total is $${cart.total}`}
+                        amount={cart.total*100}
+                        token={onToken}
+                        stripeKey={KEY}
+                        >
+                            <Button>CHECKOUT NOW</Button>
+                        </StripeCheckout>
+                    </Summary>
+                </Bottom>
+            </Wrapper>
+            <Footer/>
+        </Container>
+    )
 }
 
 export default Cart

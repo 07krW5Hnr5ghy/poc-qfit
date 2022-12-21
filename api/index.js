@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+dotenv.config();
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const productRoute = require("./routes/product");
@@ -10,7 +11,6 @@ const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 
-dotenv.config();
 
 mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log("DB Connection Successfull!"))
@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGO_URL)
 app.use(express.json());
 
 app.use(cors({
-    origin:'*',
+    origin:'http://localhost:3000',
     methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
 }));
 app.use("/api/auth",authRoute);
