@@ -9,6 +9,7 @@ import {
   Route,
   Navigate
 } from "react-router-dom";
+import User from "./pages/user/User";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route path="/users" element={<UserList/>}/>
+            <Route path="/user/:userId" element={<User/>}/>
           </Routes>
         </div>
       </div>
