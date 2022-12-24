@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./product.css";
 import Chart from "../../components/chart/Chart";
 import {productData} from "../../dummyData";
+import { Publish } from "@mui/icons-material";
 function Product() {
   return (
     <div className="product">
@@ -67,7 +68,12 @@ function Product() {
                         alt="" 
                         className="productUploadImg" 
                         />
+                        <label for="file">
+                            <Publish/>
+                        </label>
+                        <input type="file" id="file" style={{display:"none"}}/>
                     </div>
+                    <button className="productButton">Update</button>
                 </div>
             </form>
         </div>
