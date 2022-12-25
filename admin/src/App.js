@@ -14,9 +14,16 @@ import NewUser from "./pages/newUser/NewUser";
 import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
+import Login from "./pages/login/Login";
+import {useSelector} from "react-redux";
 
 function App() {
-  return (
+  const admin = useSelector((state) => state.user.currentUser);
+  return (    
+      !admin?.isAdmin ? 
+      <Routes>
+        <Route path="/login" element={<Login/>}/>
+      </Routes> : 
       <div>
         <Topbar/>
         <div className="container">
@@ -29,6 +36,7 @@ function App() {
             <Route path="/products" element={<ProductList/>}/>
             <Route path="/product/:productId" element={<Product/>}/>
             <Route path="/newproduct" element={<NewProduct/>}/>
+            <Route path="/login" element={<Navigate to="/"/>}/>
           </Routes>
         </div>
       </div>
