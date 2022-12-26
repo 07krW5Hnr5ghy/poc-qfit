@@ -1,7 +1,7 @@
 ### Add Order
 POST http://localhost:5000/api/orders
 Content-Type: application/json
-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTM3MWRiZGRmNjEyYTU0MTdiNzA0OCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MDYwNzQ4MCwiZXhwIjoxNjcwODY2NjgwfQ.MhxIR0kgBoSpwrMDnSrLFfgVOqOkHt4mzNkMa6VZxhM
+token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWU1NzM2ZWZmYjgxZTYzOWJhMzg3YiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MjAwNjA1MSwiZXhwIjoxNjcyMjY1MjUxfQ.6tNfrZwwPAYNj2253kqYSYIJ-0wPnjnk8Db1dV9tV8I
 
 {
     "userId":"639123cc9fc90f6a40ecaee5",

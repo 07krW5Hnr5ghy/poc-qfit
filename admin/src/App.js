@@ -22,6 +22,7 @@ function App() {
   return (    
       !admin?.isAdmin ? 
       <Routes>
+        <Route path="/" element={<Navigate to="/login"/>}/>
         <Route path="/login" element={<Login/>}/>
       </Routes> : 
       <div>
