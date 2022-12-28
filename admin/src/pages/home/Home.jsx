@@ -35,7 +35,6 @@ const Home = () => {
           {
             setUserStats((prev)=>
             {
-              console.log(item._id-1);
               return [
                 ...prev,
                 {name: MONTHS[item._id-1], "Active User": item.total},
