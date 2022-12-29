@@ -107,7 +107,7 @@ dist
 package-lock.json
 
 # rest call test
-*.rest
+api/testcalls/*.rest
 
 # firebase credentials
 firebase.js
