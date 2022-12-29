@@ -108,3 +108,6 @@ package-lock.json
 
 # rest call test
 .rest
+
+# firebase credentials
+firebase.js
